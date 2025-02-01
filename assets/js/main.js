@@ -88,6 +88,27 @@
   document.addEventListener('scroll', toggleScrollTop);
 
   /**
+   * Scroll top button
+   */
+  let scrollTopTwo = document.querySelector('.scroll-toptwo');
+
+  function toggleScrollTopTwo() {
+    if (scrollTopTwo) {
+      window.scrollY > 100 ? scrollTopTwo.classList.add('active') : scrollTopTwo.classList.remove('active');
+    }
+  }
+  scrollTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  window.addEventListener('load', toggleScrollTopTwo);
+  document.addEventListener('scroll', toggleScrollTopTwo);
+
+  /**
    * Animation on scroll function and init
    */
   function aosInit() {
